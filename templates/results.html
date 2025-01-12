@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocation Vision</title>
+    <!-- Link to styles.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vocation Vision</h1>
+        <p>Your Search Results are:</p>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <ul class="job-list">
+                {% for job in recommendations %}
+                <li class="job-item">
+                    <strong>{{ job['Job Title'] }}</strong><br>
+                    Role: {{ job['Role'] }}<br>
+                    Company: {{ job['Company'] }}<br>
+                    Skills: {{ job['skills'] }}<br>
+                    Qualification: {{ job['Qualifications'] }}<br>
+                    Work Type: {{ job['Work Type'] }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="/" class="back-link">Search Again</a>
+    </div>
+</body>
+</html>

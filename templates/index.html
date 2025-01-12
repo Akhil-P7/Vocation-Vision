@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocation Vision</title>
+    <!-- Link to styles.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vocation Vision</h1>
+        <p>Your ultimate destination for finding the perfect job!</p>
+        <form action="/results" method="post">
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" required><br><br>
+
+            <label for="job_role">Job Role:</label>
+            <input type="text" id="job_role" name="job_role" required><br><br>
+
+            <label for="company_preference">Company Preference:</label>
+            <input type="text" id="company_preference" name="company_preference"><br><br>
+
+            <label for="qualification">Qualification:</label>
+            <input type="text" id="qualification" name="qualification" required><br><br>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
